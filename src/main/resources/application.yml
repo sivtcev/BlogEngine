@@ -1,0 +1,41 @@
+logging:
+  level:
+    org.springframework: ERROR
+    com.sivtcev: DEBUG
+
+spring:
+  profiles:
+    active: development
+
+---
+
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/DevPub
+    username: postgres
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    generate-ddl: false
+
+  flyway:
+    schemas: dp
+
+---
+
+spring:
+  profiles: production
+
+---
+
+init:
+  title: DevPub
+  subtitle: Developer's Stories
+  phone: +7 960 263 69 85
+  email: sivtcev@gmail.com
+  copyright: Sivtcev Andrey
+  copyrightFrom: 2021
