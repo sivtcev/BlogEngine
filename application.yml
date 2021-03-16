@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: development
+
+spring:
+  profiles: development
+server:
+  port: 8080
+
+spring:
+  profiles: production
+server: 
+  port: 8888
+  
+datasource:
+    url:
+    driver-class-name:
+    user:
+    password:
+
+application:
