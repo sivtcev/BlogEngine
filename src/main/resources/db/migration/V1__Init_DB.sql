@@ -13,8 +13,8 @@ CREATE TABLE posts (
     id BIGINT NOT NULL PRIMARY KEY ,
     is_active BOOLEAN NOT NULL,
     moderation_status VARCHAR(255) NOT NULL,
-    moderator_id INT,
-    user_id INT,
+    moderator_id BIGINT,
+    user_id BIGINT,
     time TIMESTAMP NOT NULL,
     title VARCHAR(255) NOT NULL,
     text TEXT NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE tags(
     name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE tags2post (
+CREATE TABLE tag2post (
     id BIGINT NOT NULL PRIMARY KEY,
     post_id INT NOT NULL,
     tag_id INT NOT NULL
@@ -83,12 +83,12 @@ ALTER TABLE post_votes
     FOREIGN KEY (post_id) REFERENCES posts(id)
     ON DELETE CASCADE;
 
-ALTER TABLE tags2post
+ALTER TABLE tag2post
     ADD CONSTRAINT tag2post_post_foreign_key
     FOREIGN KEY (post_id) REFERENCES posts(id)
     ON DELETE CASCADE;
 
-ALTER TABLE tags2post
+ALTER TABLE tag2post
     ADD CONSTRAINT tag2post_tag_foreign_key
     FOREIGN KEY (tag_id) REFERENCES tags(id)
     ON DELETE CASCADE;
