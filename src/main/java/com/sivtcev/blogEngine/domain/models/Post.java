@@ -15,6 +15,8 @@ import java.util.Set;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "posts")
 public class Post {
 

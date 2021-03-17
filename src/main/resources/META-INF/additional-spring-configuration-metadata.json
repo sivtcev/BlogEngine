@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.test.database.initialization-mode",
+      "type": "java.lang.String",
+      "description": "Description for spring.test.database.initialization-mode."
+  }
+] }

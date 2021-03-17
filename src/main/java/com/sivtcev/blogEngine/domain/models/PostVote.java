@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "post_votes")
 public class PostVote {
 

@@ -13,6 +13,8 @@ import javax.persistence.*;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "global_settings")
 public class GlobalSetting {
 

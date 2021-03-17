@@ -12,6 +12,8 @@ import java.util.Set;
  */
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "tags")
 public class Tag {
 
