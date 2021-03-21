@@ -30,5 +30,5 @@ public class Tag {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "tag2post", joinColumns = @JoinColumn(name = "post_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private Set<Tag> postSet;
+    private Set<Post> postSet;
 }

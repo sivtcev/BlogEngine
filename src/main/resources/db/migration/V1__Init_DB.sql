@@ -57,11 +57,13 @@ CREATE TABLE captcha_codes(
     secret_code SMALLINT NOT NULL
 );
 
+CREATE TYPE global_setting_name AS ENUM('MULTIUSER_MODE', 'POST_PRE_MODERATION', 'STATISTICS_IS_PUBLIC');
+
 CREATE TABLE global_settings(
     id BIGINT NOT NULL PRIMARY KEY,
     code VARCHAR(255) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    value VARCHAR(255) NOT NULL
+    name global_setting_name NOT NULL,
+    value BOOLEAN NOT NULL
 );
 
 ALTER TABLE posts
