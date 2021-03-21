@@ -10,7 +10,11 @@ import java.util.List;
 import java.util.Set;
 
 /**
- *
+ * <h1>User entity class</h1>
+ * This class is entity of "users" table
+ * @author sivtcev
+ * @version 0.1.1
+ * @since 2021-03-17
  */
 
 @Data

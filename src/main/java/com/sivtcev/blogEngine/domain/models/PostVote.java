@@ -8,7 +8,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- *
+ * <h1>Post vote entity class</h1>
+ * This class is entity of "post_votes" table
+ * @author sivtcev
+ * @version 0.1.1
+ * @since 2021-03-17
  */
 
 @Data

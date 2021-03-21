@@ -9,7 +9,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- *
+ * <h1>Captcha code entity class</h1>
+ * This class is entity of "captcha_codes" table
+ * @author sivtcev
+ * @version 0.1.1
+ * @since 2021-03-17
  */
 
 @Data

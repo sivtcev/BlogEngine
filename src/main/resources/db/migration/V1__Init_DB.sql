@@ -8,11 +8,12 @@ CREATE TABLE users(
     code VARCHAR(255),
     photo TEXT
 );
+CREATE TYPE moderation_status AS ENUM('NEW', 'ACCEPTED', 'DECLINED');
 
 CREATE TABLE posts (
     id BIGINT NOT NULL PRIMARY KEY ,
     is_active BOOLEAN NOT NULL,
-    moderation_status VARCHAR(255) NOT NULL,
+    moderation_status moderation_status NOT NULL,
     moderator_id BIGINT,
     user_id BIGINT,
     time TIMESTAMP NOT NULL,
