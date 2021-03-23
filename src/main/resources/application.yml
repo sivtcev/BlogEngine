@@ -32,3 +32,17 @@ spring:
 
 spring:
   profiles: production
+
+---
+
+blog:
+  init:
+    title: "DevPub"
+    subtitle: "Developer stories"
+    phone: "+7 111 222-33-44"
+    email: "sivtcev@gmail.com"
+    copyright: "Andrey Sivtcev"
+    copyrightForm: "2021"
+
+
+
