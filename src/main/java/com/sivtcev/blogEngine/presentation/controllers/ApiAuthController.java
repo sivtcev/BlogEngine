@@ -1,6 +1,9 @@
 package com.sivtcev.blogEngine.presentation.controllers;
 
+import com.sivtcev.blogEngine.domain.services.AuthService;
+import com.sivtcev.blogEngine.presentation.api.response.AuthResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,25 +12,35 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class ApiAuthController {
 
+    private final AuthService authService;
+
+    /**
+     * @return information about the current authorized user, if he is authorized.
+     * It should check whether the ID of the current session is saved in the list of authorized users.
+     *
+     * Authorisation is not required
+     */
     @GetMapping("/api/auth/check")
-    private void getAuthorizationStatus(){}
+    public ResponseEntity<AuthResponse> getAuthorizationStatus(){
+        return ResponseEntity.ok(authService.getAuthStatus());
+    }
 
     @GetMapping("/api/auth/captcha")
-    private void getCaptcha(){}
+    public void getCaptcha(){}
 
     @PostMapping("/api/auth/register")
-    private void registerUser(){}
+    public void registerUser(){}
 
     @PostMapping("/api/auth/login")
-    private void userLogin(){}
+    public void userLogin(){}
 
     @PostMapping("/api/auth/restore")
-    private void restorePassword(){}
+    public void restorePassword(){}
 
     @PostMapping("/api/auth/password")
-    private void changePassword(){}
+    public void changePassword(){}
 
     @GetMapping("/api/auth/logout")
-    private void userLogout(){}
+    public void userLogout(){}
 
 }
