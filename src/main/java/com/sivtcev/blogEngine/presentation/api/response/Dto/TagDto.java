@@ -1,5 +1,6 @@
 package com.sivtcev.blogEngine.presentation.api.response.Dto;
 
+import com.sivtcev.blogEngine.domain.models.Tag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
