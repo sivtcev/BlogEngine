@@ -4,5 +4,5 @@ import com.sivtcev.blogEngine.presentation.api.response.PostResponse;
 
 public interface PostService {
 
-    PostResponse getPosts();
+    PostResponse getPosts(int offset, int limit, String mode);
 }

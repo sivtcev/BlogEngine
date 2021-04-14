@@ -1,5 +1,6 @@
 package com.sivtcev.blogEngine.presentation.api.response.Dto;
 
+import com.sivtcev.blogEngine.domain.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -28,5 +29,10 @@ public class UserDto {
         this.moderation = moderation;
         this.moderationCount = moderationCount;
         this.settings = settings;
+    }
+
+    public UserDto(User user){
+        this.id = user.getId();
+        this.name = user.getName();
     }
 }
