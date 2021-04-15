@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -33,19 +32,19 @@ public class User {
     @Column(name = "reg_time", nullable = false, columnDefinition = "TIMESTAMP")
     private LocalDateTime regTime;
 
-    @Column(name = "name", nullable = false, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "name", nullable = false, columnDefinition = "VARCHAR")
     private String name;
 
-    @Column(name = "email", nullable = false, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "email", nullable = false, columnDefinition = "VARCHAR")
     private String email;
 
-    @Column(name = "password", nullable = false, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "password", nullable = false, columnDefinition = "VARCHAR")
     private String password;
 
-    @Column(name = "code", nullable = true, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "code", columnDefinition = "VARCHAR")
     private String code;
 
-    @Column(name = "photo", nullable = true, columnDefinition = "TEXT")
+    @Column(name = "photo", columnDefinition = "TEXT")
     private String photo;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)

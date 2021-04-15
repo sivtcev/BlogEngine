@@ -26,7 +26,7 @@ public class PostComment {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id", nullable = true, referencedColumnName = "id")
+    @JoinColumn(name = "parent_id", referencedColumnName = "id")
     private PostComment moderator;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

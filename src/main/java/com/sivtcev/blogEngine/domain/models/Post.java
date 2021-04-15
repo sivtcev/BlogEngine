@@ -32,11 +32,11 @@ public class Post {
     private Boolean isActive;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "moderation_status", nullable = false, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "moderation_status", nullable = false, columnDefinition = "VARCHAR")
     private ModerationStatus moderationStatus;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "moderator_id", nullable = true, referencedColumnName = "id")
+    @JoinColumn(name = "moderator_id", referencedColumnName = "id")
     private User moderator;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -46,7 +46,7 @@ public class Post {
     @Column(name = "time", nullable = false, columnDefinition = "TIMESTAMP")
     private LocalDateTime time;
 
-    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR", length = 255)
+    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR")
     private String title;
 
     @Column(name = "text", nullable = false, columnDefinition = "TEXT")
@@ -65,4 +65,19 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<PostComment> postCommentList;
 
+    public long getLikeCount(){
+        return postVoteList.stream()
+                .filter(postVote -> postVote.getValue() == 1)
+                .count();
+    }
+
+    public long getDisLikeCount(){
+        return postVoteList.stream()
+                .filter(postVote -> postVote.getValue() == -1)
+                .count();
+    }
+
+    public long getCommentCount(){
+        return postCommentList.size();
+    }
 }
