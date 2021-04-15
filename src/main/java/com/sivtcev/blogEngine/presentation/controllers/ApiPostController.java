@@ -4,6 +4,7 @@ import com.sivtcev.blogEngine.domain.services.PostService;
 import com.sivtcev.blogEngine.presentation.api.response.PostResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

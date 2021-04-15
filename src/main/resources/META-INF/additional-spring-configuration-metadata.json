@@ -4,5 +4,15 @@
       "name": "spring.test.database.initialization-mode",
       "type": "java.lang.String",
       "description": "Description for spring.test.database.initialization-mode."
-  }
-] }
+    },
+    {
+      "name": "spring.datasource.initialization-mode",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.initialization-mode."
+    },
+    {
+      "name": "spring.jpa.show-sql",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.show-sql."
+    }
+  ] }
